@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		453ACD321C3846420077C60C /* Thread.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453ACD311C3846420077C60C /* Thread.swift */; };
+		453ACD341C38465F0077C60C /* RedditController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453ACD331C38465F0077C60C /* RedditController.swift */; };
+		453ACD381C3847700077C60C /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 453ACD351C38475B0077C60C /* Alamofire.framework */; };
+		453ACD3B1C3850180077C60C /* ThreadTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453ACD3A1C3850180077C60C /* ThreadTableViewCell.swift */; };
+		453ACD3D1C385A430077C60C /* ThreadType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453ACD3C1C385A430077C60C /* ThreadType.swift */; };
+		453ACD3F1C385B1F0077C60C /* RedditTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453ACD3E1C385B1F0077C60C /* RedditTableViewController.swift */; };
 		4564A0501C37EA5100A7CEE9 /* GTTableView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4564A04A1C37EA0A00A7CEE9 /* GTTableView.framework */; };
 		4564A0511C37EA5100A7CEE9 /* GTTableView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4564A04A1C37EA0A00A7CEE9 /* GTTableView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		45DF0E311C37E94B002FB32A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DF0E291C37E94B002FB32A /* AppDelegate.swift */; };
@@ -48,6 +54,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		453ACD311C3846420077C60C /* Thread.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Thread.swift; sourceTree = "<group>"; };
+		453ACD331C38465F0077C60C /* RedditController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedditController.swift; sourceTree = "<group>"; };
+		453ACD351C38475B0077C60C /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		453ACD3A1C3850180077C60C /* ThreadTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadTableViewCell.swift; sourceTree = "<group>"; };
+		453ACD3C1C385A430077C60C /* ThreadType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadType.swift; sourceTree = "<group>"; };
+		453ACD3E1C385B1F0077C60C /* RedditTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedditTableViewController.swift; sourceTree = "<group>"; };
 		4564A0451C37EA0A00A7CEE9 /* GTTableView.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = GTTableView.xcodeproj; sourceTree = "<group>"; };
 		45DF0E291C37E94B002FB32A /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		45DF0E2A1C37E94B002FB32A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -64,12 +76,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				4564A0501C37EA5100A7CEE9 /* GTTableView.framework in Frameworks */,
+				453ACD381C3847700077C60C /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		453ACD301C3846300077C60C /* Reddit */ = {
+			isa = PBXGroup;
+			children = (
+				453ACD3E1C385B1F0077C60C /* RedditTableViewController.swift */,
+				453ACD311C3846420077C60C /* Thread.swift */,
+				453ACD331C38465F0077C60C /* RedditController.swift */,
+				453ACD3A1C3850180077C60C /* ThreadTableViewCell.swift */,
+				453ACD3C1C385A430077C60C /* ThreadType.swift */,
+			);
+			path = Reddit;
+			sourceTree = "<group>";
+		};
 		4564A0461C37EA0A00A7CEE9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +106,7 @@
 		45DF0E281C37E94B002FB32A /* Example */ = {
 			isa = PBXGroup;
 			children = (
+				453ACD301C3846300077C60C /* Reddit */,
 				45DF0E291C37E94B002FB32A /* AppDelegate.swift */,
 				45DF0E2A1C37E94B002FB32A /* Assets.xcassets */,
 				45DF0E2B1C37E94B002FB32A /* LaunchScreen.storyboard */,
@@ -94,6 +120,7 @@
 		45F103711C37E8AF005E0F10 = {
 			isa = PBXGroup;
 			children = (
+				453ACD351C38475B0077C60C /* Alamofire.framework */,
 				4564A0451C37EA0A00A7CEE9 /* GTTableView.xcodeproj */,
 				45DF0E281C37E94B002FB32A /* Example */,
 				45F1037B1C37E8AF005E0F10 /* Products */,
@@ -119,6 +146,7 @@
 				45F103771C37E8AF005E0F10 /* Frameworks */,
 				45F103781C37E8AF005E0F10 /* Resources */,
 				4564A0541C37EA5100A7CEE9 /* Embed Frameworks */,
+				453ACD391C38477C0077C60C /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -192,13 +220,35 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		453ACD391C38477C0077C60C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		45F103761C37E8AF005E0F10 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				45DF0E361C37E94B002FB32A /* ViewController.swift in Sources */,
+				453ACD3F1C385B1F0077C60C /* RedditTableViewController.swift in Sources */,
 				45DF0E311C37E94B002FB32A /* AppDelegate.swift in Sources */,
+				453ACD341C38465F0077C60C /* RedditController.swift in Sources */,
+				453ACD3D1C385A430077C60C /* ThreadType.swift in Sources */,
+				453ACD321C3846420077C60C /* Thread.swift in Sources */,
+				453ACD3B1C3850180077C60C /* ThreadTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,6 +369,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/Example/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -331,6 +385,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/Example/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
