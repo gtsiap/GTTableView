@@ -49,12 +49,12 @@ public class AsyncTableViewController: TableViewController, AsyncDataSourceDeleg
     public func willLoadData() {}
 
     public func loadData(completed: () -> ()) {
-        fatalError("Implementation is missing")
+        fatalError("Implementation is missing \(self.dynamicType)")
     }
 
     public func didLoadData() {}
 
     public func sectionsForTableView() -> [TableViewSectionType] {
-        fatalError("Missing Implementation")
+        fatalError("Missing Implementation \(self.dynamicType)")
     }
 }
