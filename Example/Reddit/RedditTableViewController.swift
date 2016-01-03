@@ -23,7 +23,8 @@ import GTTableView
 
 class RedditTableViewController: AsyncTableViewController {
 
-    var threadsSection = TableViewSection<Thread, ThreadTableViewCell>()
+    private var threadsSection = TableViewSection<Thread, ThreadTableViewCell>()
+    private var lastThreadType: ThreadType?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,17 +33,23 @@ class RedditTableViewController: AsyncTableViewController {
     override func loadData(completed: () -> ()) {
         let threadType: ThreadType
 
-        guard let
+        if let
             selectedIndex = self.tableView.indexPathForSelectedRow
-        else { return }
+        {
+            switch selectedIndex.row {
+            case 0:
+                threadType = .Hot
+            case 1:
+                threadType = .Top
+            default:
+                threadType = .New
+            }
 
-        switch selectedIndex.row {
-        case 0:
-            threadType = .Hot
-        case 1:
-            threadType = .Top
-        default:
-            threadType = .New
+            self.lastThreadType = threadType
+        } else if let lastThreadType = self.lastThreadType {
+            threadType = lastThreadType
+        } else {
+            return
         }
 
         let controller = RedditController()

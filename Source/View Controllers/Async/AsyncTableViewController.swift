@@ -22,6 +22,8 @@ import UIKit
 
 public class AsyncTableViewController: TableViewController, AsyncDataSourceDelegate {
 
+    public var shouldPerformPullToRefresh: Bool { return true }
+
     public override var dataSource: DataSourceType! {
         didSet {
             let errorMessage = "This TableView requires a AsyncDataSource." +
@@ -43,7 +45,40 @@ public class AsyncTableViewController: TableViewController, AsyncDataSourceDeleg
         )
 
         dataSource.delegate = self
-        self.dataSource = dataSource
+
+        defer { self.dataSource = dataSource }
+        
+        if self.shouldPerformPullToRefresh {
+
+            self.refreshControl = UIRefreshControl()
+
+            self.refreshControl?.addTarget(
+                self,
+                action: "refreshControlValueDidChange",
+                forControlEvents: .ValueChanged
+            )
+
+            self.refreshControl?.attributedTitle =
+                NSAttributedString(string: "Pull Me..")
+
+            self.refreshControl?.beginRefreshing()
+            self.refreshControl?.endRefreshing()
+
+            dataSource.pullToRefreshDidEnd = {
+                self.refreshControl?.attributedTitle =
+                    NSAttributedString(string: "Pull Me..")
+
+                self.refreshControl?.endRefreshing()
+            }
+        }
+    }
+
+    /**
+     This method will be called before "pull to refresh"
+     calls `loadData`
+     */
+    public func pullToRefreshWillStart() {
+
     }
 
     public func willLoadData() {}
@@ -56,5 +91,11 @@ public class AsyncTableViewController: TableViewController, AsyncDataSourceDeleg
 
     public func sectionsForTableView() -> [TableViewSectionType] {
         fatalError("Missing Implementation \(self.dynamicType)")
+    }
+
+    @objc private func refreshControlValueDidChange() {
+        self.refreshControl?.attributedTitle = NSAttributedString(string: "Loading..")
+        pullToRefreshWillStart()
+        self.dataSource.reloadData()
     }
 }

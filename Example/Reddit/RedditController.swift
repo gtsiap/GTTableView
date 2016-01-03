@@ -32,6 +32,9 @@ class RedditController {
 
         request(.GET, url).responseJSON()
         { response in
+
+            defer { completionHandler(threads) }
+
             guard let JSON = response.result.value else {
                 print("Network error")
                 return
@@ -56,7 +59,6 @@ class RedditController {
                 let thread = Thread(name: title, after: after)
                 threads.append(thread)
             }
-            completionHandler(threads)
         } // end request
     } // end fetchThreads
 }

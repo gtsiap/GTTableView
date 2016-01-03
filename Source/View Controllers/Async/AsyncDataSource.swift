@@ -23,15 +23,16 @@ import UIKit
 struct AsyncDataSource: DataSourceType {
     var sections: [TableViewSectionType]
     weak private(set) var tableView: UITableView?
-
     weak var delegate: AsyncDataSourceDelegate!
+
+    var pullToRefreshDidEnd: (() -> ())?
 
     init(
         tableView: UITableView,
         sections: [TableViewSectionType]
-        ) {
-            self.sections = sections
-            self.tableView = tableView
+    ) {
+        self.sections = sections
+        self.tableView = tableView
     }
 
     func reloadData() {
@@ -39,6 +40,7 @@ struct AsyncDataSource: DataSourceType {
         self.delegate.loadData() {
             self.delegate.didLoadData()
             self.tableView?.reloadData()
+            self.pullToRefreshDidEnd?()
         }
     }
     
