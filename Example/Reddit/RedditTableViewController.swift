@@ -21,10 +21,11 @@
 import UIKit
 import GTTableView
 
-class RedditTableViewController: AsyncTableViewController {
+class RedditTableViewController: FetchMoreTableViewController {
 
     private var threadsSection = TableViewSection<Thread, ThreadTableViewCell>()
     private var lastThreadType: ThreadType?
+    private let controller = RedditController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,7 +53,6 @@ class RedditTableViewController: AsyncTableViewController {
             return
         }
 
-        let controller = RedditController()
         controller.fetchThreads(threadType) { threads in
             self.threadsSection.items = threads
             completed()
@@ -79,5 +79,19 @@ class RedditTableViewController: AsyncTableViewController {
 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         self.dataSource.reloadData()
+    }
+
+    override func fetchMore(finished: (animation: UITableViewRowAnimation, newItemsCount: Int) -> ()) {
+        guard let
+            after = self.threadsSection.items.last?.after
+        else {
+            finished(animation: .Fade, newItemsCount: 0)
+            return
+        }
+
+        controller.fetchMoreThreads(self.lastThreadType!, after: after) { threads in
+            threads.forEach() { self.threadsSection.items.append($0) }
+            finished(animation: .Fade, newItemsCount: threads.count)
+        }
     }
 }

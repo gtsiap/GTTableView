@@ -24,41 +24,59 @@ class RedditController {
     typealias CompletionHandler = ([Thread]) -> ()
 
     func fetchThreads(threadType: ThreadType, completionHandler: CompletionHandler) {
-        var threads = [Thread]()
 
         var url = "https://www.reddit.com/r/swift/"
         url += threadType.rawValue
         url += ".json"
 
-        request(.GET, url).responseJSON()
-        { response in
-
-            defer { completionHandler(threads) }
-
-            guard let JSON = response.result.value else {
-                print("Network error")
-                return
-            }
-
-            guard let
-                data = JSON["data"] as? [String : AnyObject],
-                children = data["children"] as? [[String : AnyObject]]
-            else {
-                print("Error Parsing JSON")
-                return
-            }
-
-            let after = data["after"] as? String
-
-            for child in children {
-                guard let
-                    childData = child["data"] as? [String : AnyObject],
-                    title = childData["title"] as? String
-                else { continue }                
-
-                let thread = Thread(name: title, after: after)
-                threads.append(thread)
-            }
-        } // end request
+        request(.GET, url).responseJSON() { response in
+            completionHandler(self.parseThreads(response))
+        }
     } // end fetchThreads
+
+    func fetchMoreThreads(
+        threadType: ThreadType,
+        after: String,
+        completionHandler: CompletionHandler)
+    {
+        var url = "https://www.reddit.com/r/swift/"
+        url += threadType.rawValue
+        url += ".json"
+        url += "?after=\(after)"
+
+        request(.GET, url).responseJSON() { response in
+            completionHandler(self.parseThreads(response))
+        }
+    }
+
+    private func parseThreads(response: Response<AnyObject, NSError>) -> [Thread] {
+        var threads = [Thread]()
+
+        guard let JSON = response.result.value else {
+            print("Network error")
+            return threads
+        }
+
+        guard let
+            data = JSON["data"] as? [String : AnyObject],
+            children = data["children"] as? [[String : AnyObject]]
+        else {
+            print("Error Parsing JSON")
+            return threads
+        }
+
+        let after = data["after"] as? String
+
+        for child in children {
+            guard let
+                childData = child["data"] as? [String : AnyObject],
+                title = childData["title"] as? String
+            else { continue }
+
+            let thread = Thread(name: title, after: after)
+            threads.append(thread)
+        }
+
+        return threads
+    }
 }

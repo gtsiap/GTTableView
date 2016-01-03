@@ -15,6 +15,7 @@
 		4564A04E1C37EA2F00A7CEE9 /* GTTableView.h in Headers */ = {isa = PBXBuildFile; fileRef = 4564A04C1C37EA2F00A7CEE9 /* GTTableView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		458DBB5A1C37F72D009094BF /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458DBB591C37F72D009094BF /* DataSource.swift */; };
 		458DBB5F1C380045009094BF /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458DBB5E1C380045009094BF /* TableViewController.swift */; };
+		45CD9D7E1C39295100DA11E4 /* FetchMoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CD9D7D1C39295100DA11E4 /* FetchMoreTableViewController.swift */; };
 		45E3F0201C37F1AA006C2BB5 /* TableViewSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E3F01F1C37F1AA006C2BB5 /* TableViewSection.swift */; };
 		45E3F0221C37F231006C2BB5 /* TableViewCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E3F0211C37F231006C2BB5 /* TableViewCellType.swift */; };
 /* End PBXBuildFile section */
@@ -29,6 +30,7 @@
 		4564A04D1C37EA2F00A7CEE9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		458DBB591C37F72D009094BF /* DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		458DBB5E1C380045009094BF /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		45CD9D7D1C39295100DA11E4 /* FetchMoreTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchMoreTableViewController.swift; sourceTree = "<group>"; };
 		45E3F01F1C37F1AA006C2BB5 /* TableViewSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewSection.swift; sourceTree = "<group>"; };
 		45E3F0211C37F231006C2BB5 /* TableViewCellType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCellType.swift; sourceTree = "<group>"; };
 		45F103661C37E87A005E0F10 /* GTTableView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GTTableView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -57,6 +59,7 @@
 		453ACD451C385EBA0077C60C /* Async */ = {
 			isa = PBXGroup;
 			children = (
+				45CD9D7C1C39294100DA11E4 /* Fetch More */,
 				453ACD4A1C3860CF0077C60C /* AsyncTableViewController.swift */,
 				453ACD461C385ECD0077C60C /* AsyncDataSource.swift */,
 				453ACD481C385EF70077C60C /* AsyncDataSourceDelegate.swift */,
@@ -83,6 +86,14 @@
 				458DBB5E1C380045009094BF /* TableViewController.swift */,
 			);
 			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		45CD9D7C1C39294100DA11E4 /* Fetch More */ = {
+			isa = PBXGroup;
+			children = (
+				45CD9D7D1C39295100DA11E4 /* FetchMoreTableViewController.swift */,
+			);
+			path = "Fetch More";
 			sourceTree = "<group>";
 		};
 		45E3F01E1C37F199006C2BB5 /* Base */ = {
@@ -198,6 +209,7 @@
 				453ACD491C385EF70077C60C /* AsyncDataSourceDelegate.swift in Sources */,
 				458DBB5A1C37F72D009094BF /* DataSource.swift in Sources */,
 				45E3F0221C37F231006C2BB5 /* TableViewCellType.swift in Sources */,
+				45CD9D7E1C39295100DA11E4 /* FetchMoreTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
