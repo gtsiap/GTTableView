@@ -64,11 +64,12 @@ public class AsyncTableViewController: TableViewController, AsyncDataSourceDeleg
             self.refreshControl?.beginRefreshing()
             self.refreshControl?.endRefreshing()
 
-            dataSource.pullToRefreshDidEnd = {
-                self.refreshControl?.attributedTitle =
+            dataSource.pullToRefreshDidEnd = { [weak self] in
+                guard let weakSelf = self else { return }
+                weakSelf.refreshControl?.attributedTitle =
                     NSAttributedString(string: "Pull Me..")
 
-                self.refreshControl?.endRefreshing()
+                weakSelf.refreshControl?.endRefreshing()
             }
         }
     }
