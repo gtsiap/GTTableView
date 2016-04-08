@@ -54,7 +54,7 @@ public class AsyncTableViewController: TableViewController, AsyncDataSourceDeleg
 
             self.refreshControl?.addTarget(
                 self,
-                action: "refreshControlValueDidChange",
+                action: #selector(refreshControlValueDidChange),
                 forControlEvents: .ValueChanged
             )
 

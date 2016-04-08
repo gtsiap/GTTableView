@@ -19,7 +19,7 @@
 // THE SOFTWARE.
 
 public protocol TableViewCellType: class {
-    typealias ModelType
+    associatedtype ModelType
 
     /**
      It will be called automatically when the cell
