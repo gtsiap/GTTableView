@@ -50,7 +50,8 @@ class ViewController: TableViewController {
 
         let items = [
             "Reddit",
-            "Dummy cell"
+            "Dummy cell",
+            "Table View"
         ]
 
         let section = TableViewSection<String, BaseTableViewCell>(items: items)
@@ -70,7 +71,15 @@ class ViewController: TableViewController {
     }
 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.performSegueWithIdentifier("goToReddit", sender: self)
+        let segueName: String
+
+        if indexPath.row == 2 {
+            segueName = "showTableView"
+        } else {
+            segueName = "goToReddit"
+        }
+
+        self.performSegueWithIdentifier(segueName, sender: self)
     }
 }
 
