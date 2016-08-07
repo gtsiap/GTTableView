@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "45F103651C37E87A005E0F10"
-               BuildableName = "GTTableView.framework"
-               BlueprintName = "GTTableView"
-               ReferencedContainer = "container:GTTableView.xcodeproj">
+               BuildableName = "GTDataSources.framework"
+               BlueprintName = "GTDataSources"
+               ReferencedContainer = "container:GTDataSources.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -46,9 +46,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "45F103651C37E87A005E0F10"
-            BuildableName = "GTTableView.framework"
-            BlueprintName = "GTTableView"
-            ReferencedContainer = "container:GTTableView.xcodeproj">
+            BuildableName = "GTDataSources.framework"
+            BlueprintName = "GTDataSources"
+            ReferencedContainer = "container:GTDataSources.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -64,9 +64,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "45F103651C37E87A005E0F10"
-            BuildableName = "GTTableView.framework"
-            BlueprintName = "GTTableView"
-            ReferencedContainer = "container:GTTableView.xcodeproj">
+            BuildableName = "GTDataSources.framework"
+            BlueprintName = "GTDataSources"
+            ReferencedContainer = "container:GTDataSources.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

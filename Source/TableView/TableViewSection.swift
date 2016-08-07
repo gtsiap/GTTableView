@@ -24,39 +24,20 @@ import UIKit
 */
 public class TableViewSection<
     T,
-    Cell: TableViewCellType
-    where Cell.ModelType == T,
-    Cell: UITableViewCell>: TableViewSectionType {
-
-    /**
-     The items of this section
-     */
-    public var items: [T] = [T]()
-
+    Cell: UITableViewCell
+where
+    Cell: ViewCellType,
+    Cell.ModelType == T>: Section<T, Cell>
+{
     public var headerTitle: String?
     public var footerTitle: String?
-
-    public var count: Int {
-        return self.items.count
-    }
-
-    /**
-     - parameter item: the current item of the section for which
-                       a cell identifier has been requested
-     - parameter indexPath: the current indexPath
-     - returns: returns the cell identifier that will be used
-                for the cell reuse
-     */
-    public typealias CellIdentifierHandler = (item: T, indexPath: NSIndexPath) -> String
-    public let cellIdentifierHandler: CellIdentifierHandler
 
     /**
      - parameter items: The items of this section
      - parameter cellIdentifierHandler: the cellIdentifierHandler handler
      */
-    public init(items: [T], cellIdentifierHandler: CellIdentifierHandler) {
-        self.items = items
-        self.cellIdentifierHandler = cellIdentifierHandler
+    public required init(items: [T], cellIdentifierHandler: CellIdentifierHandler) {
+        super.init(items: items, cellIdentifierHandler: cellIdentifierHandler)
     }
 
     /**
@@ -85,6 +66,9 @@ public class TableViewSection<
             return "myCell"
         }
     }
+}
+
+extension TableViewSection: TableViewSectionType {
 
     public func cellForRowAtIndexPath(
         tableView: UITableView,

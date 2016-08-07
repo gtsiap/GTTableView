@@ -7,36 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		453ACD321C3846420077C60C /* Thread.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453ACD311C3846420077C60C /* Thread.swift */; };
-		453ACD341C38465F0077C60C /* RedditController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453ACD331C38465F0077C60C /* RedditController.swift */; };
 		453ACD381C3847700077C60C /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 453ACD351C38475B0077C60C /* Alamofire.framework */; };
-		453ACD3B1C3850180077C60C /* ThreadTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453ACD3A1C3850180077C60C /* ThreadTableViewCell.swift */; };
-		453ACD3D1C385A430077C60C /* ThreadType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453ACD3C1C385A430077C60C /* ThreadType.swift */; };
-		453ACD3F1C385B1F0077C60C /* RedditTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453ACD3E1C385B1F0077C60C /* RedditTableViewController.swift */; };
-		4564A0501C37EA5100A7CEE9 /* GTTableView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4564A04A1C37EA0A00A7CEE9 /* GTTableView.framework */; };
-		4564A0511C37EA5100A7CEE9 /* GTTableView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4564A04A1C37EA0A00A7CEE9 /* GTTableView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		45A02DD81D1FDB04008AF543 /* ExampleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A02DD71D1FDB04008AF543 /* ExampleTableViewController.swift */; };
 		45DF0E311C37E94B002FB32A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DF0E291C37E94B002FB32A /* AppDelegate.swift */; };
 		45DF0E321C37E94B002FB32A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45DF0E2A1C37E94B002FB32A /* Assets.xcassets */; };
 		45DF0E331C37E94B002FB32A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45DF0E2B1C37E94B002FB32A /* LaunchScreen.storyboard */; };
 		45DF0E341C37E94B002FB32A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45DF0E2D1C37E94B002FB32A /* Main.storyboard */; };
 		45DF0E361C37E94B002FB32A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DF0E301C37E94B002FB32A /* ViewController.swift */; };
+		45EAB3A21D572C64004E1DAA /* GTDataSources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45EAB3A11D572C48004E1DAA /* GTDataSources.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		4564A0491C37EA0A00A7CEE9 /* PBXContainerItemProxy */ = {
+		45EAB3A01D572C48004E1DAA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 4564A0451C37EA0A00A7CEE9 /* GTTableView.xcodeproj */;
+			containerPortal = 4564A0451C37EA0A00A7CEE9 /* GTDataSources.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 45F103661C37E87A005E0F10;
-			remoteInfo = GTTableView;
-		};
-		4564A0521C37EA5100A7CEE9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4564A0451C37EA0A00A7CEE9 /* GTTableView.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 45F103651C37E87A005E0F10;
-			remoteInfo = GTTableView;
+			remoteInfo = GTDataSources;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -47,7 +34,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				4564A0511C37EA5100A7CEE9 /* GTTableView.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -55,13 +41,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		453ACD311C3846420077C60C /* Thread.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Thread.swift; sourceTree = "<group>"; };
-		453ACD331C38465F0077C60C /* RedditController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedditController.swift; sourceTree = "<group>"; };
 		453ACD351C38475B0077C60C /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
-		453ACD3A1C3850180077C60C /* ThreadTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadTableViewCell.swift; sourceTree = "<group>"; };
-		453ACD3C1C385A430077C60C /* ThreadType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadType.swift; sourceTree = "<group>"; };
-		453ACD3E1C385B1F0077C60C /* RedditTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedditTableViewController.swift; sourceTree = "<group>"; };
-		4564A0451C37EA0A00A7CEE9 /* GTTableView.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = GTTableView.xcodeproj; sourceTree = "<group>"; };
+		4564A0451C37EA0A00A7CEE9 /* GTDataSources.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = GTDataSources.xcodeproj; sourceTree = "<group>"; };
 		45A02DD71D1FDB04008AF543 /* ExampleTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleTableViewController.swift; sourceTree = "<group>"; };
 		45DF0E291C37E94B002FB32A /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		45DF0E2A1C37E94B002FB32A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -69,7 +50,7 @@
 		45DF0E2E1C37E94B002FB32A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		45DF0E2F1C37E94B002FB32A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		45DF0E301C37E94B002FB32A /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		45F1037A1C37E8AF005E0F10 /* GTTableViewExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GTTableViewExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		45F1037A1C37E8AF005E0F10 /* GTDataSourcesExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GTDataSourcesExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,7 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4564A0501C37EA5100A7CEE9 /* GTTableView.framework in Frameworks */,
+				45EAB3A21D572C64004E1DAA /* GTDataSources.framework in Frameworks */,
 				453ACD381C3847700077C60C /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -85,30 +66,9 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		453ACD301C3846300077C60C /* Reddit */ = {
-			isa = PBXGroup;
-			children = (
-				453ACD3E1C385B1F0077C60C /* RedditTableViewController.swift */,
-				453ACD311C3846420077C60C /* Thread.swift */,
-				453ACD331C38465F0077C60C /* RedditController.swift */,
-				453ACD3A1C3850180077C60C /* ThreadTableViewCell.swift */,
-				453ACD3C1C385A430077C60C /* ThreadType.swift */,
-			);
-			path = Reddit;
-			sourceTree = "<group>";
-		};
-		4564A0461C37EA0A00A7CEE9 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				4564A04A1C37EA0A00A7CEE9 /* GTTableView.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		45DF0E281C37E94B002FB32A /* Example */ = {
 			isa = PBXGroup;
 			children = (
-				453ACD301C3846300077C60C /* Reddit */,
 				45DF0E291C37E94B002FB32A /* AppDelegate.swift */,
 				45DF0E2A1C37E94B002FB32A /* Assets.xcassets */,
 				45DF0E2B1C37E94B002FB32A /* LaunchScreen.storyboard */,
@@ -120,11 +80,19 @@
 			path = Example;
 			sourceTree = "<group>";
 		};
+		45EAB39D1D572C48004E1DAA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				45EAB3A11D572C48004E1DAA /* GTDataSources.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		45F103711C37E8AF005E0F10 = {
 			isa = PBXGroup;
 			children = (
 				453ACD351C38475B0077C60C /* Alamofire.framework */,
-				4564A0451C37EA0A00A7CEE9 /* GTTableView.xcodeproj */,
+				4564A0451C37EA0A00A7CEE9 /* GTDataSources.xcodeproj */,
 				45DF0E281C37E94B002FB32A /* Example */,
 				45F1037B1C37E8AF005E0F10 /* Products */,
 			);
@@ -133,7 +101,7 @@
 		45F1037B1C37E8AF005E0F10 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				45F1037A1C37E8AF005E0F10 /* GTTableViewExample.app */,
+				45F1037A1C37E8AF005E0F10 /* GTDataSourcesExample.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -141,9 +109,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		45F103791C37E8AF005E0F10 /* GTTableViewExample */ = {
+		45F103791C37E8AF005E0F10 /* GTDataSourcesExample */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 45F1038C1C37E8B0005E0F10 /* Build configuration list for PBXNativeTarget "GTTableViewExample" */;
+			buildConfigurationList = 45F1038C1C37E8B0005E0F10 /* Build configuration list for PBXNativeTarget "GTDataSourcesExample" */;
 			buildPhases = (
 				45F103761C37E8AF005E0F10 /* Sources */,
 				45F103771C37E8AF005E0F10 /* Frameworks */,
@@ -154,11 +122,10 @@
 			buildRules = (
 			);
 			dependencies = (
-				4564A0531C37EA5100A7CEE9 /* PBXTargetDependency */,
 			);
-			name = GTTableViewExample;
+			name = GTDataSourcesExample;
 			productName = GTTableViewExample;
-			productReference = 45F1037A1C37E8AF005E0F10 /* GTTableViewExample.app */;
+			productReference = 45F1037A1C37E8AF005E0F10 /* GTDataSourcesExample.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -176,7 +143,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 45F103751C37E8AF005E0F10 /* Build configuration list for PBXProject "GTTableViewExample" */;
+			buildConfigurationList = 45F103751C37E8AF005E0F10 /* Build configuration list for PBXProject "GTDataSourcesExample" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -189,23 +156,23 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 4564A0461C37EA0A00A7CEE9 /* Products */;
-					ProjectRef = 4564A0451C37EA0A00A7CEE9 /* GTTableView.xcodeproj */;
+					ProductGroup = 45EAB39D1D572C48004E1DAA /* Products */;
+					ProjectRef = 4564A0451C37EA0A00A7CEE9 /* GTDataSources.xcodeproj */;
 				},
 			);
 			projectRoot = "";
 			targets = (
-				45F103791C37E8AF005E0F10 /* GTTableViewExample */,
+				45F103791C37E8AF005E0F10 /* GTDataSourcesExample */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		4564A04A1C37EA0A00A7CEE9 /* GTTableView.framework */ = {
+		45EAB3A11D572C48004E1DAA /* GTDataSources.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
-			path = GTTableView.framework;
-			remoteRef = 4564A0491C37EA0A00A7CEE9 /* PBXContainerItemProxy */;
+			path = GTDataSources.framework;
+			remoteRef = 45EAB3A01D572C48004E1DAA /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -246,25 +213,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				45DF0E361C37E94B002FB32A /* ViewController.swift in Sources */,
-				453ACD3F1C385B1F0077C60C /* RedditTableViewController.swift in Sources */,
 				45DF0E311C37E94B002FB32A /* AppDelegate.swift in Sources */,
 				45A02DD81D1FDB04008AF543 /* ExampleTableViewController.swift in Sources */,
-				453ACD341C38465F0077C60C /* RedditController.swift in Sources */,
-				453ACD3D1C385A430077C60C /* ThreadType.swift in Sources */,
-				453ACD321C3846420077C60C /* Thread.swift in Sources */,
-				453ACD3B1C3850180077C60C /* ThreadTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		4564A0531C37EA5100A7CEE9 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = GTTableView;
-			targetProxy = 4564A0521C37EA5100A7CEE9 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		45DF0E2B1C37E94B002FB32A /* LaunchScreen.storyboard */ = {
@@ -380,8 +334,8 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Example/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.github.terietor.GTTableViewExample;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.terietor.GTDataSourcesExample;
+				PRODUCT_NAME = GTDataSourcesExample;
 			};
 			name = Debug;
 		};
@@ -396,15 +350,15 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Example/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.github.terietor.GTTableViewExample;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.terietor.GTDataSourcesExample;
+				PRODUCT_NAME = GTDataSourcesExample;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		45F103751C37E8AF005E0F10 /* Build configuration list for PBXProject "GTTableViewExample" */ = {
+		45F103751C37E8AF005E0F10 /* Build configuration list for PBXProject "GTDataSourcesExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				45F1038A1C37E8B0005E0F10 /* Debug */,
@@ -413,7 +367,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		45F1038C1C37E8B0005E0F10 /* Build configuration list for PBXNativeTarget "GTTableViewExample" */ = {
+		45F1038C1C37E8B0005E0F10 /* Build configuration list for PBXNativeTarget "GTDataSourcesExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				45F1038D1C37E8B0005E0F10 /* Debug */,

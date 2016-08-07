@@ -18,30 +18,25 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-import UIKit
+public protocol TableViewSectionType: SectionType {
+    /**
+     The header title of this section
+     */
+    var headerTitle: String? { get set }
 
-struct AsyncDataSource: DataSourceType {
-    var sections: [TableViewSectionType]
-    weak private(set) var tableView: UITableView?
-    weak var delegate: AsyncDataSourceDelegate!
+    /**
+     The footer title of this section
+     */
+    var footerTitle: String? { get set }
 
-    var pullToRefreshDidEnd: (() -> ())?
-
-    init(
+    /**
+     Provides a new cell
+     - parameter tableView: The tableview requesting the cell
+     - parameter indexPath: the indexPath for the new row
+     - returns: the new cell that will be used for the new row
+     */
+    func cellForRowAtIndexPath(
         tableView: UITableView,
-        sections: [TableViewSectionType]
-    ) {
-        self.sections = sections
-        self.tableView = tableView
-    }
-
-    func reloadData() {
-        self.delegate.willLoadData()
-        self.delegate.loadData() {
-            self.delegate.didLoadData()
-            self.tableView?.reloadData()
-            self.pullToRefreshDidEnd?()
-        }
-    }
-    
+        indexPath: NSIndexPath
+    ) -> UITableViewCell
 }

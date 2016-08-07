@@ -1,105 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="eI2-nQ-oeA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="eI2-nQ-oeA">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tYd-2g-MsN">
-            <objects>
-                <tableViewController id="0lp-mk-Re3" customClass="ViewController" customModule="GTTableViewExample" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="1TI-2d-iRs">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCell" id="Fdt-gj-Ttb" customClass="StaticTableViewCell" customModule="GTTableViewExample" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="113.5" width="600" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Fdt-gj-Ttb" id="Rer-rX-6b6">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCell2" id="NPp-Yb-oiP" customClass="ColoredStaticTableViewCell" customModule="GTTableViewExample" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="157.5" width="600" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NPp-Yb-oiP" id="oYp-FG-X6n">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="0lp-mk-Re3" id="zyz-h5-8qm"/>
-                            <outlet property="delegate" destination="0lp-mk-Re3" id="ks7-te-kyR"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="ibG-ve-cjy"/>
-                    <connections>
-                        <segue destination="Gmj-CE-iIU" kind="show" identifier="goToReddit" id="wsw-b3-Gi4"/>
-                        <segue destination="1Jm-Ij-Uxo" kind="show" identifier="showTableView" id="YtC-VT-RaI"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="yiM-bk-Eva" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1197" y="499"/>
-        </scene>
-        <!--Example Table View Controller-->
-        <scene sceneID="ger-UN-hQi">
-            <objects>
-                <viewController id="1Jm-Ij-Uxo" customClass="ExampleTableViewController" customModule="GTTableViewExample" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Dbi-3l-gS4"/>
-                        <viewControllerLayoutGuide type="bottom" id="FHi-xT-W2Y"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="p9F-a1-Oee">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="75g-Pc-6FL" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1869" y="-169"/>
-        </scene>
-        <!--Reddit Table View Controller-->
-        <scene sceneID="UIF-KG-mCr">
-            <objects>
-                <tableViewController id="Gmj-CE-iIU" customClass="RedditTableViewController" customModule="GTTableViewExample" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="k8Z-78-QHg">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCell" id="ufd-ka-KSi" customClass="ThreadTableViewCell" customModule="GTTableViewExample" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="113.5" width="600" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ufd-ka-KSi" id="kLj-Zr-GfN">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="staticCell" id="Ha6-LR-G1c" customClass="StaticTableViewCell" customModule="GTTableViewExample" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="157.5" width="600" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ha6-LR-G1c" id="qAe-KR-oo0">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="Gmj-CE-iIU" id="eLt-cI-FWf"/>
-                            <outlet property="delegate" destination="Gmj-CE-iIU" id="rJZ-da-rpJ"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="J0l-m6-UAm" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1869" y="499"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="dcp-0V-iz6">
             <objects>
@@ -111,12 +16,31 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="0lp-mk-Re3" kind="relationship" relationship="rootViewController" id="cRU-KS-7eA"/>
+                        <segue destination="Xkl-Gi-9F9" kind="relationship" relationship="rootViewController" id="tBZ-JZ-Hpd"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dde-P4-x9W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="385" y="499"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="g4H-wD-6Ki">
+            <objects>
+                <viewController id="Xkl-Gi-9F9" customClass="ViewController" customModule="GTDataSourcesExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="egR-KZ-8Aj"/>
+                        <viewControllerLayoutGuide type="bottom" id="pzz-Bd-qBs"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DHj-Uk-XI2">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Nsq-8q-otw"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ciG-Lc-dNw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1141" y="499"/>
         </scene>
     </scenes>
 </document>

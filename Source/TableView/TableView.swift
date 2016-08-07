@@ -8,8 +8,8 @@
 
 import UIKit
 
-public class TableView: UITableView, UITableViewDataSource {
-    private var tableViewDataSource: DataSourceType!
+public class TableView<S: TableViewSectionType>: UITableView, UITableViewDataSource {
+    private var sections = [S]()
 
     public var canEditRowAtIndexPath: (
         tableView: UITableView,
@@ -43,33 +43,33 @@ public class TableView: UITableView, UITableViewDataSource {
         fatalError("Missing Implementation")
     }
 
-    public init(sections: [TableViewSectionType], style: UITableViewStyle) {
+    public init(sections: [S], style: UITableViewStyle) {
         super.init(frame: CGRectZero, style: style)
         commonInit(sections)
     }
 
-    public init(section: TableViewSectionType, style: UITableViewStyle) {
+    public init(section: S, style: UITableViewStyle) {
         super.init(frame: CGRectZero, style: style)
         commonInit([section])
     }
 
-    private func commonInit(sections: [TableViewSectionType]) {
-        self.tableViewDataSource = DataSource(tableView: self, sections: sections)
+    private func commonInit(sections: [S]) {
         self.dataSource = self
+        self.sections = sections
     }
 
     public func tableView(
         tableView: UITableView,
         numberOfRowsInSection section: Int
     ) -> Int {
-        return self.tableViewDataSource.sections[section].count
+        return self.sections[section].count
     }
 
     public func tableView(
         tableView: UITableView,
         titleForHeaderInSection section: Int
     ) -> String? {
-        let section = self.tableViewDataSource.sections[section]
+        let section = self.sections[section]
         return section.headerTitle
     }
 
@@ -77,7 +77,7 @@ public class TableView: UITableView, UITableViewDataSource {
         tableView: UITableView,
         titleForFooterInSection section: Int
     ) -> String? {
-        let section = self.tableViewDataSource.sections[section]
+        let section = self.sections[section]
         return section.footerTitle
     }
 
@@ -100,8 +100,7 @@ public class TableView: UITableView, UITableViewDataSource {
         cellForRowAtIndexPath indexPath: NSIndexPath
     ) -> UITableViewCell {
         let sectionIndex = indexPath.section
-        let section = self.tableViewDataSource.sections[sectionIndex]
-
+        let section = self.sections[sectionIndex]
         return section.cellForRowAtIndexPath(tableView, indexPath: indexPath)
     }
 
@@ -130,7 +129,7 @@ public class TableView: UITableView, UITableViewDataSource {
     }
 
     public func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return self.tableViewDataSource.sections.count
+        return self.sections.count
     }
 
 }

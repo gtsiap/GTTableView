@@ -18,12 +18,12 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-public struct DataSource: DataSourceType {
-    public var sections: [TableViewSectionType]
-    public weak var tableView: UITableView?
+public protocol ViewCellType: class {
+    associatedtype ModelType
 
-    public init(tableView: UITableView, sections: [TableViewSectionType]) {
-        self.sections = sections
-        self.tableView = tableView
-    }
+    /**
+     It will be called automatically when the cell
+     needs to be configured
+     */
+    func configureCell(model: ModelType)
 }

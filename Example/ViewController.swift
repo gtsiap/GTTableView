@@ -19,67 +19,48 @@
 // THE SOFTWARE.
 
 import UIKit
-import GTTableView
+import GTDataSources
 
-class BaseTableViewCell: UITableViewCell, TableViewCellType {
-
+class BaseTableViewCell: UITableViewCell, ViewCellType {
     func configureCell(model: String) {
         self.textLabel?.text = model
     }
 }
 
-class StaticTableViewCell: BaseTableViewCell {}
 
-class ColoredStaticTableViewCell: BaseTableViewCell {
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        self.backgroundColor = UIColor.redColor()
-    }
-
-    override func configureCell(model: String) {
-        super.configureCell(model)
-
-        self.detailTextLabel?.text = "This cell has red background"
-    }
-}
-
-class ViewController: TableViewController {
+class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         let items = [
-            "Reddit",
-            "Dummy cell",
-            "Table View"
+            "TableView",
+            "CollectionView",
         ]
 
         let section = TableViewSection<String, BaseTableViewCell>(items: items)
-        { (item, indexPath) -> String in
-            if indexPath.row == 0 {
-                return "myCell"
-            }
+        let tableView = TableView(section: section, style: .Grouped)
+        tableView.registerClass(BaseTableViewCell.self, forCellReuseIdentifier: "myCell")
+        self.view.addSubview(tableView)
+        tableView.frame = self.view.bounds
+        tableView.delegate = self
 
-            return "myCell2"
-        }
-
-        section.headerTitle = "A reddit Table View Controller"
-        section.footerTitle = "Footer"
-
-        self.dataSource = DataSource(tableView: self.tableView, sections: [section])
-        self.dataSource.reloadData()
+        tableView.reloadData()
     }
+}
 
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let segueName: String
+extension ViewController: UITableViewDelegate {
 
-        if indexPath.row == 2 {
-            segueName = "showTableView"
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let vc: UIViewController
+
+        if indexPath.row == 0 {
+            vc = ExampleTableViewController()
         } else {
-            segueName = "goToReddit"
+            vc = UIViewController()
         }
 
-        self.performSegueWithIdentifier(segueName, sender: self)
+        self.showViewController(vc, sender: self)
     }
 }
 

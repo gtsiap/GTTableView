@@ -7,35 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		453ACD431C385DF60077C60C /* DataSourceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453ACD411C385DF60077C60C /* DataSourceType.swift */; };
-		453ACD441C385DF60077C60C /* TableViewSectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453ACD421C385DF60077C60C /* TableViewSectionType.swift */; };
-		453ACD471C385ECD0077C60C /* AsyncDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453ACD461C385ECD0077C60C /* AsyncDataSource.swift */; };
-		453ACD491C385EF70077C60C /* AsyncDataSourceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453ACD481C385EF70077C60C /* AsyncDataSourceDelegate.swift */; };
-		453ACD4B1C3860CF0077C60C /* AsyncTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453ACD4A1C3860CF0077C60C /* AsyncTableViewController.swift */; };
-		4564A04E1C37EA2F00A7CEE9 /* GTTableView.h in Headers */ = {isa = PBXBuildFile; fileRef = 4564A04C1C37EA2F00A7CEE9 /* GTTableView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		458DBB5A1C37F72D009094BF /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458DBB591C37F72D009094BF /* DataSource.swift */; };
-		458DBB5F1C380045009094BF /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458DBB5E1C380045009094BF /* TableViewController.swift */; };
+		4564A04E1C37EA2F00A7CEE9 /* GTDataSources.h in Headers */ = {isa = PBXBuildFile; fileRef = 4564A04C1C37EA2F00A7CEE9 /* GTDataSources.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		45A02DDB1D1FDB4A008AF543 /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A02DDA1D1FDB4A008AF543 /* TableView.swift */; };
-		45CD9D7E1C39295100DA11E4 /* FetchMoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CD9D7D1C39295100DA11E4 /* FetchMoreTableViewController.swift */; };
-		45E3F0201C37F1AA006C2BB5 /* TableViewSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E3F01F1C37F1AA006C2BB5 /* TableViewSection.swift */; };
-		45E3F0221C37F231006C2BB5 /* TableViewCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E3F0211C37F231006C2BB5 /* TableViewCellType.swift */; };
+		45EAB3AA1D574C73004E1DAA /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45EAB3A81D574C73004E1DAA /* Section.swift */; };
+		45EAB3AB1D574C73004E1DAA /* SectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45EAB3A91D574C73004E1DAA /* SectionType.swift */; };
+		45EAB3AF1D574D29004E1DAA /* ViewCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45EAB3AE1D574D29004E1DAA /* ViewCellType.swift */; };
+		45EAB3B21D574D2F004E1DAA /* TableViewSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45EAB3B01D574D2F004E1DAA /* TableViewSection.swift */; };
+		45EAB3B31D574D2F004E1DAA /* TableViewSectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45EAB3B11D574D2F004E1DAA /* TableViewSectionType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		453ACD411C385DF60077C60C /* DataSourceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSourceType.swift; sourceTree = "<group>"; };
-		453ACD421C385DF60077C60C /* TableViewSectionType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewSectionType.swift; sourceTree = "<group>"; };
-		453ACD461C385ECD0077C60C /* AsyncDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncDataSource.swift; sourceTree = "<group>"; };
-		453ACD481C385EF70077C60C /* AsyncDataSourceDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncDataSourceDelegate.swift; sourceTree = "<group>"; };
-		453ACD4A1C3860CF0077C60C /* AsyncTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncTableViewController.swift; sourceTree = "<group>"; };
-		4564A04C1C37EA2F00A7CEE9 /* GTTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTTableView.h; sourceTree = "<group>"; };
+		4564A04C1C37EA2F00A7CEE9 /* GTDataSources.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTDataSources.h; sourceTree = "<group>"; };
 		4564A04D1C37EA2F00A7CEE9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		458DBB591C37F72D009094BF /* DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
-		458DBB5E1C380045009094BF /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		45A02DDA1D1FDB4A008AF543 /* TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
-		45CD9D7D1C39295100DA11E4 /* FetchMoreTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchMoreTableViewController.swift; sourceTree = "<group>"; };
-		45E3F01F1C37F1AA006C2BB5 /* TableViewSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewSection.swift; sourceTree = "<group>"; };
-		45E3F0211C37F231006C2BB5 /* TableViewCellType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCellType.swift; sourceTree = "<group>"; };
-		45F103661C37E87A005E0F10 /* GTTableView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GTTableView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		45EAB3A81D574C73004E1DAA /* Section.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
+		45EAB3A91D574C73004E1DAA /* SectionType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionType.swift; sourceTree = "<group>"; };
+		45EAB3AE1D574D29004E1DAA /* ViewCellType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewCellType.swift; sourceTree = "<group>"; };
+		45EAB3B01D574D2F004E1DAA /* TableViewSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewSection.swift; sourceTree = "<group>"; };
+		45EAB3B11D574D2F004E1DAA /* TableViewSectionType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewSectionType.swift; sourceTree = "<group>"; };
+		45F103661C37E87A005E0F10 /* GTDataSources.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GTDataSources.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,72 +39,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		453ACD401C385DF60077C60C /* Types */ = {
-			isa = PBXGroup;
-			children = (
-				453ACD411C385DF60077C60C /* DataSourceType.swift */,
-				453ACD421C385DF60077C60C /* TableViewSectionType.swift */,
-			);
-			path = Types;
-			sourceTree = "<group>";
-		};
-		453ACD451C385EBA0077C60C /* Async */ = {
-			isa = PBXGroup;
-			children = (
-				45CD9D7C1C39294100DA11E4 /* Fetch More */,
-				453ACD4A1C3860CF0077C60C /* AsyncTableViewController.swift */,
-				453ACD461C385ECD0077C60C /* AsyncDataSource.swift */,
-				453ACD481C385EF70077C60C /* AsyncDataSourceDelegate.swift */,
-			);
-			path = Async;
-			sourceTree = "<group>";
-		};
 		4564A04B1C37EA2F00A7CEE9 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				45EAB3A71D574C49004E1DAA /* Common */,
 				45A02DD91D1FDB35008AF543 /* TableView */,
-				453ACD401C385DF60077C60C /* Types */,
-				458DBB5D1C380045009094BF /* View Controllers */,
-				45E3F01E1C37F199006C2BB5 /* Base */,
-				4564A04C1C37EA2F00A7CEE9 /* GTTableView.h */,
+				4564A04C1C37EA2F00A7CEE9 /* GTDataSources.h */,
 				4564A04D1C37EA2F00A7CEE9 /* Info.plist */,
 			);
 			path = Source;
 			sourceTree = "<group>";
 		};
-		458DBB5D1C380045009094BF /* View Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				453ACD451C385EBA0077C60C /* Async */,
-				458DBB5E1C380045009094BF /* TableViewController.swift */,
-			);
-			path = "View Controllers";
-			sourceTree = "<group>";
-		};
 		45A02DD91D1FDB35008AF543 /* TableView */ = {
 			isa = PBXGroup;
 			children = (
+				45EAB3B01D574D2F004E1DAA /* TableViewSection.swift */,
+				45EAB3B11D574D2F004E1DAA /* TableViewSectionType.swift */,
 				45A02DDA1D1FDB4A008AF543 /* TableView.swift */,
 			);
 			path = TableView;
 			sourceTree = "<group>";
 		};
-		45CD9D7C1C39294100DA11E4 /* Fetch More */ = {
+		45EAB3A71D574C49004E1DAA /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				45CD9D7D1C39295100DA11E4 /* FetchMoreTableViewController.swift */,
+				45EAB3AE1D574D29004E1DAA /* ViewCellType.swift */,
+				45EAB3A81D574C73004E1DAA /* Section.swift */,
+				45EAB3A91D574C73004E1DAA /* SectionType.swift */,
 			);
-			path = "Fetch More";
-			sourceTree = "<group>";
-		};
-		45E3F01E1C37F199006C2BB5 /* Base */ = {
-			isa = PBXGroup;
-			children = (
-				45E3F01F1C37F1AA006C2BB5 /* TableViewSection.swift */,
-				45E3F0211C37F231006C2BB5 /* TableViewCellType.swift */,
-				458DBB591C37F72D009094BF /* DataSource.swift */,
-			);
-			path = Base;
+			path = Common;
 			sourceTree = "<group>";
 		};
 		45F1035C1C37E87A005E0F10 = {
@@ -128,7 +81,7 @@
 		45F103671C37E87A005E0F10 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				45F103661C37E87A005E0F10 /* GTTableView.framework */,
+				45F103661C37E87A005E0F10 /* GTDataSources.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -140,16 +93,16 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4564A04E1C37EA2F00A7CEE9 /* GTTableView.h in Headers */,
+				4564A04E1C37EA2F00A7CEE9 /* GTDataSources.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		45F103651C37E87A005E0F10 /* GTTableView */ = {
+		45F103651C37E87A005E0F10 /* GTDataSources */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 45F1036E1C37E87A005E0F10 /* Build configuration list for PBXNativeTarget "GTTableView" */;
+			buildConfigurationList = 45F1036E1C37E87A005E0F10 /* Build configuration list for PBXNativeTarget "GTDataSources" */;
 			buildPhases = (
 				45F103611C37E87A005E0F10 /* Sources */,
 				45F103621C37E87A005E0F10 /* Frameworks */,
@@ -160,9 +113,9 @@
 			);
 			dependencies = (
 			);
-			name = GTTableView;
+			name = GTDataSources;
 			productName = GTTableView;
-			productReference = 45F103661C37E87A005E0F10 /* GTTableView.framework */;
+			productReference = 45F103661C37E87A005E0F10 /* GTDataSources.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -179,7 +132,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 45F103601C37E87A005E0F10 /* Build configuration list for PBXProject "GTTableView" */;
+			buildConfigurationList = 45F103601C37E87A005E0F10 /* Build configuration list for PBXProject "GTDataSources" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -191,7 +144,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				45F103651C37E87A005E0F10 /* GTTableView */,
+				45F103651C37E87A005E0F10 /* GTDataSources */,
 			);
 		};
 /* End PBXProject section */
@@ -211,17 +164,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				453ACD471C385ECD0077C60C /* AsyncDataSource.swift in Sources */,
-				453ACD441C385DF60077C60C /* TableViewSectionType.swift in Sources */,
-				45E3F0201C37F1AA006C2BB5 /* TableViewSection.swift in Sources */,
-				453ACD4B1C3860CF0077C60C /* AsyncTableViewController.swift in Sources */,
-				453ACD431C385DF60077C60C /* DataSourceType.swift in Sources */,
-				458DBB5F1C380045009094BF /* TableViewController.swift in Sources */,
-				453ACD491C385EF70077C60C /* AsyncDataSourceDelegate.swift in Sources */,
-				458DBB5A1C37F72D009094BF /* DataSource.swift in Sources */,
-				45E3F0221C37F231006C2BB5 /* TableViewCellType.swift in Sources */,
+				45EAB3AA1D574C73004E1DAA /* Section.swift in Sources */,
 				45A02DDB1D1FDB4A008AF543 /* TableView.swift in Sources */,
-				45CD9D7E1C39295100DA11E4 /* FetchMoreTableViewController.swift in Sources */,
+				45EAB3AF1D574D29004E1DAA /* ViewCellType.swift in Sources */,
+				45EAB3B31D574D2F004E1DAA /* TableViewSectionType.swift in Sources */,
+				45EAB3B21D574D2F004E1DAA /* TableViewSection.swift in Sources */,
+				45EAB3AB1D574C73004E1DAA /* SectionType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,8 +278,8 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.github.terietor.GTTableView;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.terietor.GTDataSources;
+				PRODUCT_NAME = GTDataSources;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -350,8 +298,8 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.github.terietor.GTTableView;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.terietor.GTDataSources;
+				PRODUCT_NAME = GTDataSources;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -359,7 +307,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		45F103601C37E87A005E0F10 /* Build configuration list for PBXProject "GTTableView" */ = {
+		45F103601C37E87A005E0F10 /* Build configuration list for PBXProject "GTDataSources" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				45F1036C1C37E87A005E0F10 /* Debug */,
@@ -368,7 +316,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		45F1036E1C37E87A005E0F10 /* Build configuration list for PBXNativeTarget "GTTableView" */ = {
+		45F1036E1C37E87A005E0F10 /* Build configuration list for PBXNativeTarget "GTDataSources" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				45F1036F1C37E87A005E0F10 /* Debug */,
