@@ -1,4 +1,8 @@
-# GTTableView
+# This project is deprecated.
+More advanced libraries than this one have been created.
+New features won't be added and the source code with remain available.
+
+## GTTableView
 
 A library for creating simple but powerful Table Views
 
