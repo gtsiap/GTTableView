@@ -24,37 +24,37 @@ import UIKit
 A generic Table View Controller.
 This Controller **doesn't** support `pull to refresh`
 */
-public class TableViewController: UITableViewController {
+open class TableViewController: UITableViewController {
     /**
      The dataSource of the view controller
      */
-    public var dataSource: DataSourceType!
+    open var dataSource: DataSourceType!
 
-    public override func viewDidLoad() {
+    open override func viewDidLoad() {
         super.viewDidLoad()
     }
 
-    override public func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override open func numberOfSections(in tableView: UITableView) -> Int {
         return self.dataSource.sections.count
     }
 
-    override public func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override open func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.dataSource.sections[section].count
     }
 
-    override public func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let sectionIndex = indexPath.section
+    override open func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let sectionIndex = (indexPath as NSIndexPath).section
         let section = self.dataSource.sections[sectionIndex]
 
         return section.cellForRowAtIndexPath(tableView, indexPath: indexPath)
     }
 
-    public override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    open override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         let section = self.dataSource.sections[section]
         return section.headerTitle
     }
 
-    public override func tableView(tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+    open override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
         let section = self.dataSource.sections[section]
         return section.footerTitle
     }

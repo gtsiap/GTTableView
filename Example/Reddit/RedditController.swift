@@ -23,43 +23,43 @@ import Alamofire
 class RedditController {
     typealias CompletionHandler = ([Thread]) -> ()
 
-    func fetchThreads(threadType: ThreadType, completionHandler: CompletionHandler) {
+    func fetchThreads(threadType: ThreadType, completionHandler: @escaping CompletionHandler) {
 
         var url = "https://www.reddit.com/r/swift/"
         url += threadType.rawValue
         url += ".json"
 
-        request(.GET, url).responseJSON() { response in
-            completionHandler(self.parseThreads(response))
+        request(url, method: .get).responseJSON() { response in
+            completionHandler(self.parseThreads(response: response))
         }
     } // end fetchThreads
 
     func fetchMoreThreads(
         threadType: ThreadType,
         after: String,
-        completionHandler: CompletionHandler)
+        completionHandler: @escaping CompletionHandler)
     {
         var url = "https://www.reddit.com/r/swift/"
         url += threadType.rawValue
         url += ".json"
         url += "?after=\(after)"
 
-        request(.GET, url).responseJSON() { response in
-            completionHandler(self.parseThreads(response))
+        request(url, method: .get).responseJSON() { response in
+            completionHandler(self.parseThreads(response: response))
         }
     }
 
-    private func parseThreads(response: Response<AnyObject, NSError>) -> [Thread] {
+    private func parseThreads(response: DataResponse<Any>) -> [Thread] {
         var threads = [Thread]()
 
-        guard let JSON = response.result.value else {
+        guard let JSON = response.result.value as? [String : Any] else {
             print("Network error")
             return threads
         }
 
         guard let
-            data = JSON["data"] as? [String : AnyObject],
-            children = data["children"] as? [[String : AnyObject]]
+            data = JSON["data"] as? [String : Any],
+            let children = data["children"] as? [[String : AnyObject]]
         else {
             print("Error Parsing JSON")
             return threads
@@ -70,7 +70,7 @@ class RedditController {
         for child in children {
             guard let
                 childData = child["data"] as? [String : AnyObject],
-                title = childData["title"] as? String
+                let title = childData["title"] as? String
             else { continue }
 
             let thread = Thread(name: title, after: after)

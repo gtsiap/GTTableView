@@ -23,7 +23,7 @@ import GTTableView
 
 class ThreadTableViewCell: UITableViewCell, TableViewCellType {
 
-    func configureCell(model: Thread) {
+    func configureCell(_ model: Thread) {
         self.textLabel?.text = model.name
     }
 

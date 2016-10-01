@@ -25,5 +25,5 @@ public protocol TableViewCellType: class {
      It will be called automatically when the cell
      needs to be configured
      */
-    func configureCell(model: ModelType)
+    func configureCell(_ model: ModelType)
 }

@@ -8,34 +8,34 @@
 
 import UIKit
 
-public class TableView: UITableView, UITableViewDataSource {
+open class TableView: UITableView, UITableViewDataSource {
     private var tableViewDataSource: DataSourceType!
 
-    public var canEditRowAtIndexPath: (
-        tableView: UITableView,
-        indexPath: NSIndexPath) -> Bool =
+    open var canEditRowAtIndexPath: (
+        _ tableView: UITableView,
+        _ indexPath: IndexPath) -> Bool =
     { (_, _) in
         return false
     }
 
-    public var canMoveRowAtIndexPath: (
-        tableView: UITableView,
-        indexPath: NSIndexPath) -> Bool =
+    open var canMoveRowAtIndexPath: (
+        _ tableView: UITableView,
+        _ indexPath: IndexPath) -> Bool =
     { (_, _) in
         return false
     }
 
-    public var moveRowAtIndexPath: (
-        tableView: UITableView,
-        sourceIndexPath: NSIndexPath,
-        destinationIndexPath: NSIndexPath) -> () =
+    open var moveRowAtIndexPath: (
+        _ tableView: UITableView,
+        _ sourceIndexPath: IndexPath,
+        _ destinationIndexPath: IndexPath) -> () =
     { (_, _, _) in
     }
 
-    public var commitEditingStyle: (
-        tableView: UITableView,
-        commitEditingStyle: UITableViewCellEditingStyle,
-        indexPath: NSIndexPath) -> () =
+    open var commitEditingStyle: (
+        _ tableView: UITableView,
+        _ commitEditingStyle: UITableViewCellEditingStyle,
+        _ indexPath: IndexPath) -> () =
     { (_, _, _) in
     }
 
@@ -44,92 +44,92 @@ public class TableView: UITableView, UITableViewDataSource {
     }
 
     public init(sections: [TableViewSectionType], style: UITableViewStyle) {
-        super.init(frame: CGRectZero, style: style)
+        super.init(frame: CGRect.zero, style: style)
         commonInit(sections)
     }
 
     public init(section: TableViewSectionType, style: UITableViewStyle) {
-        super.init(frame: CGRectZero, style: style)
+        super.init(frame: CGRect.zero, style: style)
         commonInit([section])
     }
 
-    private func commonInit(sections: [TableViewSectionType]) {
+    private func commonInit(_ sections: [TableViewSectionType]) {
         self.tableViewDataSource = DataSource(tableView: self, sections: sections)
         self.dataSource = self
     }
 
-    public func tableView(
-        tableView: UITableView,
+    open func tableView(
+        _ tableView: UITableView,
         numberOfRowsInSection section: Int
     ) -> Int {
         return self.tableViewDataSource.sections[section].count
     }
 
-    public func tableView(
-        tableView: UITableView,
+    open func tableView(
+        _ tableView: UITableView,
         titleForHeaderInSection section: Int
     ) -> String? {
         let section = self.tableViewDataSource.sections[section]
         return section.headerTitle
     }
 
-    public func tableView(
-        tableView: UITableView,
+    open func tableView(
+        _ tableView: UITableView,
         titleForFooterInSection section: Int
     ) -> String? {
         let section = self.tableViewDataSource.sections[section]
         return section.footerTitle
     }
 
-    public func tableView(
-        tableView: UITableView,
-        canEditRowAtIndexPath indexPath: NSIndexPath
+    open func tableView(
+        _ tableView: UITableView,
+        canEditRowAt indexPath: IndexPath
     ) -> Bool {
-        return self.canEditRowAtIndexPath(tableView: tableView, indexPath: indexPath)
+        return self.canEditRowAtIndexPath(tableView, indexPath)
     }
 
-    public func tableView(
-        tableView: UITableView,
-        canMoveRowAtIndexPath indexPath: NSIndexPath
+    open func tableView(
+        _ tableView: UITableView,
+        canMoveRowAt indexPath: IndexPath
     ) -> Bool {
-        return self.canMoveRowAtIndexPath(tableView: tableView, indexPath: indexPath)
+        return self.canMoveRowAtIndexPath(tableView, indexPath)
     }
 
-    public func tableView(
-        tableView: UITableView,
-        cellForRowAtIndexPath indexPath: NSIndexPath
+    open func tableView(
+        _ tableView: UITableView,
+        cellForRowAt indexPath: IndexPath
     ) -> UITableViewCell {
-        let sectionIndex = indexPath.section
+        let sectionIndex = (indexPath as NSIndexPath).section
         let section = self.tableViewDataSource.sections[sectionIndex]
 
         return section.cellForRowAtIndexPath(tableView, indexPath: indexPath)
     }
 
-    public func tableView(
-        tableView: UITableView,
-        moveRowAtIndexPath sourceIndexPath: NSIndexPath,
-        toIndexPath destinationIndexPath: NSIndexPath
+    open func tableView(
+        _ tableView: UITableView,
+        moveRowAt sourceIndexPath: IndexPath,
+        to destinationIndexPath: IndexPath
     ) {
         self.moveRowAtIndexPath(
-            tableView: tableView,
-            sourceIndexPath: sourceIndexPath,
-            destinationIndexPath: destinationIndexPath
+            tableView,
+            sourceIndexPath,
+            destinationIndexPath
         )
     }
 
-    public func tableView(
-        tableView: UITableView,
-        commitEditingStyle editingStyle: UITableViewCellEditingStyle,
-        forRowAtIndexPath indexPath: NSIndexPath
+    open func tableView(
+        _ tableView: UITableView,
+        commit editingStyle: UITableViewCellEditingStyle,
+        forRowAt indexPath: IndexPath
     ) {
         self.commitEditingStyle(
-            tableView: tableView,
-            commitEditingStyle: editingStyle,
-            indexPath: indexPath
+            tableView,
+            editingStyle,
+            indexPath
         )
     }
 
-    public func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    open func numberOfSections(in tableView: UITableView) -> Int {
         return self.tableViewDataSource.sections.count
     }
 

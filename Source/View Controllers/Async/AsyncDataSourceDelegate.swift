@@ -35,7 +35,7 @@ public protocol AsyncDataSourceDelegate: class {
      - parameter completed: it **must** be called **after**
      the operation finishes
      */
-    func loadData(completed: () -> ())
+    func loadData(_ completed: @escaping () -> ())
 
     /**
      It will be called after the

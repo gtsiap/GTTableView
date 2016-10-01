@@ -20,11 +20,11 @@
 
 import UIKit
 
-public class AsyncTableViewController: TableViewController, AsyncDataSourceDelegate {
+open class AsyncTableViewController: TableViewController, AsyncDataSourceDelegate {
 
-    public var shouldPerformPullToRefresh: Bool { return true }
+    open var shouldPerformPullToRefresh: Bool { return true }
 
-    public override var dataSource: DataSourceType! {
+    open override var dataSource: DataSourceType! {
         didSet {
             let errorMessage = "This TableView requires a AsyncDataSource." +
                                "Maybe you should use TableViewController instead." +
@@ -36,7 +36,7 @@ public class AsyncTableViewController: TableViewController, AsyncDataSourceDeleg
         }
     }
 
-    public override func viewDidLoad() {
+    open override func viewDidLoad() {
         super.viewDidLoad()
 
         var dataSource = AsyncDataSource(
@@ -55,7 +55,7 @@ public class AsyncTableViewController: TableViewController, AsyncDataSourceDeleg
             self.refreshControl?.addTarget(
                 self,
                 action: #selector(refreshControlValueDidChange),
-                forControlEvents: .ValueChanged
+                for: .valueChanged
             )
 
             self.refreshControl?.attributedTitle =
@@ -78,20 +78,20 @@ public class AsyncTableViewController: TableViewController, AsyncDataSourceDeleg
      This method will be called before "pull to refresh"
      calls `loadData`
      */
-    public func pullToRefreshWillStart() {
+    open func pullToRefreshWillStart() {
 
     }
 
-    public func willLoadData() {}
+    open func willLoadData() {}
 
-    public func loadData(completed: () -> ()) {
-        fatalError("Implementation is missing \(self.dynamicType)")
+    open func loadData(_ completed: @escaping () -> ()) {
+        fatalError("Implementation is missing \(type(of: self))")
     }
 
-    public func didLoadData() {}
+    open func didLoadData() {}
 
-    public func sectionsForTableView() -> [TableViewSectionType] {
-        fatalError("Missing Implementation \(self.dynamicType)")
+    open func sectionsForTableView() -> [TableViewSectionType] {
+        fatalError("Missing Implementation \(type(of: self))")
     }
 
     @objc private func refreshControlValueDidChange() {

@@ -22,21 +22,21 @@ import UIKit
 /**
  It provides a section which can have multiple cell identifiers.
 */
-public class TableViewSection<
+open class TableViewSection<
     T,
-    Cell: TableViewCellType
+    Cell: TableViewCellType>: TableViewSectionType
     where Cell.ModelType == T,
-    Cell: UITableViewCell>: TableViewSectionType {
+    Cell: UITableViewCell {
 
     /**
      The items of this section
      */
-    public var items: [T] = [T]()
+    open var items: [T] = [T]()
 
-    public var headerTitle: String?
-    public var footerTitle: String?
+    open var headerTitle: String?
+    open var footerTitle: String?
 
-    public var count: Int {
+    open var count: Int {
         return self.items.count
     }
 
@@ -47,14 +47,14 @@ public class TableViewSection<
      - returns: returns the cell identifier that will be used
                 for the cell reuse
      */
-    public typealias CellIdentifierHandler = (item: T, indexPath: NSIndexPath) -> String
-    public let cellIdentifierHandler: CellIdentifierHandler
+    public typealias CellIdentifierHandler = (_ item: T, _ indexPath: IndexPath) -> String
+    open let cellIdentifierHandler: CellIdentifierHandler
 
     /**
      - parameter items: The items of this section
      - parameter cellIdentifierHandler: the cellIdentifierHandler handler
      */
-    public init(items: [T], cellIdentifierHandler: CellIdentifierHandler) {
+    public init(items: [T], cellIdentifierHandler: @escaping CellIdentifierHandler) {
         self.items = items
         self.cellIdentifierHandler = cellIdentifierHandler
     }
@@ -71,7 +71,7 @@ public class TableViewSection<
     /**
      A convenience initializer which sets an empty list for items.
      */
-    public convenience init(cellIdentifierHandler: CellIdentifierHandler) {
+    public convenience init(cellIdentifierHandler: @escaping CellIdentifierHandler) {
         self.init(items: [T](), cellIdentifierHandler: cellIdentifierHandler)
     }
 
@@ -86,16 +86,16 @@ public class TableViewSection<
         }
     }
 
-    public func cellForRowAtIndexPath(
-        tableView: UITableView,
-        indexPath: NSIndexPath
+    open func cellForRowAtIndexPath(
+        _ tableView: UITableView,
+        indexPath: IndexPath
     ) -> UITableViewCell {
-        let rowIndex = indexPath.row
+        let rowIndex = (indexPath as NSIndexPath).row
 
         let item = self.items[rowIndex]
 
-        let cellIdentifier = self.cellIdentifierHandler(item: item, indexPath: indexPath)
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! Cell
+        let cellIdentifier = self.cellIdentifierHandler(item, indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! Cell
         cell.configureCell(item)
 
         return cell

@@ -31,7 +31,7 @@ class RedditTableViewController: FetchMoreTableViewController {
         super.viewDidLoad()
     }
 
-    override func loadData(completed: () -> ()) {
+    override func loadData(_ completed: @escaping () -> ()) {
         let threadType: ThreadType
 
         if let
@@ -53,7 +53,7 @@ class RedditTableViewController: FetchMoreTableViewController {
             return
         }
 
-        controller.fetchThreads(threadType) { threads in
+        controller.fetchThreads(threadType: threadType) { threads in
             self.threadsSection.items = threads
             completed()
         }
@@ -77,21 +77,21 @@ class RedditTableViewController: FetchMoreTableViewController {
         ]
     }
 
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.dataSource.reloadData()
     }
 
-    override func fetchMore(finished: (animation: UITableViewRowAnimation, newItemsCount: Int) -> ()) {
+    override func fetchMore(_ finished: @escaping (_ animation: UITableViewRowAnimation, _ newItemsCount: Int) -> ()) {
         guard let
             after = self.threadsSection.items.last?.after
         else {
-            finished(animation: .Fade, newItemsCount: 0)
+            finished(.fade, 0)
             return
         }
 
-        controller.fetchMoreThreads(self.lastThreadType!, after: after) { threads in
+        controller.fetchMoreThreads(threadType: self.lastThreadType!, after: after) { threads in
             threads.forEach() { self.threadsSection.items.append($0) }
-            finished(animation: .Fade, newItemsCount: threads.count)
+            finished(.fade, threads.count)
         }
     }
 }

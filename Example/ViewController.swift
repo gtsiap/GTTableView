@@ -23,7 +23,7 @@ import GTTableView
 
 class BaseTableViewCell: UITableViewCell, TableViewCellType {
 
-    func configureCell(model: String) {
+    func configureCell(_ model: String) {
         self.textLabel?.text = model
     }
 }
@@ -33,10 +33,10 @@ class StaticTableViewCell: BaseTableViewCell {}
 class ColoredStaticTableViewCell: BaseTableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.backgroundColor = UIColor.redColor()
+        self.backgroundColor = UIColor.red
     }
 
-    override func configureCell(model: String) {
+    override func configureCell(_ model: String) {
         super.configureCell(model)
 
         self.detailTextLabel?.text = "This cell has red background"
@@ -69,8 +69,7 @@ class ViewController: TableViewController {
         self.dataSource = DataSource(tableView: self.tableView, sections: [section])
         self.dataSource.reloadData()
     }
-
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let segueName: String
 
         if indexPath.row == 2 {
@@ -79,7 +78,8 @@ class ViewController: TableViewController {
             segueName = "goToReddit"
         }
 
-        self.performSegueWithIdentifier(segueName, sender: self)
+        self.performSegue(withIdentifier: segueName, sender: self)
     }
+
 }
 

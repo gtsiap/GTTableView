@@ -18,9 +18,9 @@ class ExampleTableViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let tableView = TableView(section: self.section, style: .Plain)
+        let tableView = TableView(section: self.section, style: .plain)
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.registerClass(BaseTableViewCell.self, forCellReuseIdentifier: "myCell")
+        tableView.register(BaseTableViewCell.self, forCellReuseIdentifier: "myCell")
 
         self.view.addSubview(tableView)
 

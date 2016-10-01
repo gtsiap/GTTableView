@@ -8,22 +8,22 @@
 
 import UIKit
 
-public class DefaultFetchMoreActivityIndicator: UIActivityIndicatorView {
-    public override func didMoveToSuperview() {
-        self.activityIndicatorViewStyle = .WhiteLarge
-        self.color = UIColor.blackColor()
+open class DefaultFetchMoreActivityIndicator: UIActivityIndicatorView {
+    open override func didMoveToSuperview() {
+        self.activityIndicatorViewStyle = .whiteLarge
+        self.color = UIColor.black
         self.startAnimating()
     }
 }
 
-public class FetchMoreTableViewController: AsyncTableViewController {
+open class FetchMoreTableViewController: AsyncTableViewController {
     private enum FetchingState {
-        case Starting
-        case Started
-        case Fetching
-        case NotFetching
+        case starting
+        case started
+        case fetching
+        case notFetching
     }
-    private var fetchingState: FetchingState = .NotFetching
+    private var fetchingState: FetchingState = .notFetching
 
     /**
      This view will be used as an indicator.
@@ -31,26 +31,26 @@ public class FetchMoreTableViewController: AsyncTableViewController {
      default instance of `DefaultFetchMoreActivityIndicator`
      will be used
      */
-    public var fetchΜοreActivityIndicator: UIView?
+    open var fetchΜοreActivityIndicator: UIView?
 
     /**
      Fetch your new data here.
      - NOTE: You are responsible for adding the new data to your section
      - parameter finished: It must be called when the operation finishes
      */
-    public func fetchMore(finished: (animation: UITableViewRowAnimation, newItemsCount: Int) -> ()) {
+    open func fetchMore(_ finished: @escaping (_ animation: UITableViewRowAnimation, _ newItemsCount: Int) -> ()) {
         fatalError("Missing Implementation")
     }
 
-    override public func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+    override open func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
 
-        guard case .Starting = self.fetchingState else {
+        guard case .starting = self.fetchingState else {
             print(self.fetchingState)
             print("return")
             return
         }
 
-        self.fetchingState = .Fetching
+        self.fetchingState = .fetching
 
         if let indicator = self.fetchΜοreActivityIndicator {
             self.tableView.tableFooterView = indicator
@@ -65,12 +65,12 @@ public class FetchMoreTableViewController: AsyncTableViewController {
             indexPath = self.tableView.indexPathsForVisibleRows?.last
         else { return }
 
-        let sectionIndex = indexPath.section
+        let sectionIndex = (indexPath as NSIndexPath).section
 
         fetchMore() { (animation, newItemsCount) in
             defer {
                 self.tableView.tableFooterView = nil
-                self.fetchingState = .NotFetching
+                self.fetchingState = .notFetching
             }
 
             if newItemsCount == 0 {
@@ -78,9 +78,9 @@ public class FetchMoreTableViewController: AsyncTableViewController {
                 return
             }
 
-            var newIndexPaths = [NSIndexPath]()
+            var newIndexPaths = [IndexPath]()
 
-            let currentRow = indexPath.row
+            let currentRow = (indexPath as NSIndexPath).row
             for index in 1...newItemsCount {
                 // If we had 25 rows and if we are in the first
                 // loop, then we have:
@@ -88,21 +88,21 @@ public class FetchMoreTableViewController: AsyncTableViewController {
                 // and the index is 1
                 // so the position of the new index is 26 which equals to 26 = (25 + 1)
                 let newRow = currentRow + index
-                newIndexPaths.append(NSIndexPath(forRow: newRow, inSection: sectionIndex))
+                newIndexPaths.append(IndexPath(row: newRow, section: sectionIndex))
             }
 
             self.tableView.beginUpdates()
-            self.tableView.insertRowsAtIndexPaths(newIndexPaths, withRowAnimation: animation)
+            self.tableView.insertRows(at: newIndexPaths, with: animation)
             self.tableView.endUpdates()
         }
     }
 
-    override public func scrollViewWillBeginDecelerating(scrollView: UIScrollView) {
+    override open func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
 
         if scrollView.contentOffset.y >= (scrollView.contentSize.height - scrollView.frame.size.height) {
             // we have reached bottom
-            if case .NotFetching = self.fetchingState {
-                self.fetchingState = .Starting
+            if case .notFetching = self.fetchingState {
+                self.fetchingState = .starting
             }
         } else {
             return

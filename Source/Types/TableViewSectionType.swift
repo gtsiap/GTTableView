@@ -41,7 +41,7 @@ public protocol TableViewSectionType {
      - returns: the new cell that will be used for the new row
      */
     func cellForRowAtIndexPath(
-        tableView: UITableView,
-        indexPath: NSIndexPath
+        _ tableView: UITableView,
+        indexPath: IndexPath
     ) -> UITableViewCell
 }
